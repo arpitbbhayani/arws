@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://arpitbhayani.me/static/img/favicon.png"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.min.js"></script>
+    <script>
+      var io = io("http://localhost:5000");
+      io.on('connection', function(socket){
+        console.log('someone connected');
+        socket.on('disconnect', function () {
+            console.log('someone disconnected');
+        });
+      });
+    </script>
+  </head>
+</html>
